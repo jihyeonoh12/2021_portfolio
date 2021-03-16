@@ -1,4 +1,5 @@
 import React from 'react'
+import '../styles/general.css';
 import '../styles/card.css';
 
 
@@ -8,10 +9,12 @@ class Card extends React.Component {
         return(
             <div className="card">
                 <img src={this.props.image} className="card_image"/>
-                <h1>
-                    Title goes here
-                </h1>
-                <p>Description goes here</p>
+                <div className="card_text">
+                    <h2>
+                        {this.props.title}
+                    </h2>
+                    <p>{this.props.description}</p>
+                </div>
             </div>
         )
     }

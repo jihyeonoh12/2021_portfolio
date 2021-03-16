@@ -1,15 +1,32 @@
-import logo from './logo.svg';
+import React from 'react'
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
-import Navbar from './component/Navbar'
-import Body from './component/Body'
+import Home from './pages/Home'
+import About from './pages/About'
+import Error from './pages/Error'
+import PostProteinPlus from './pages/PostProteinPlus'
 
-function App() {
-  return (
-    <div className="App">
-      <Navbar />
-      <Body />
-    </div>
-  );
+
+class App extends React.Component {
+  render() {
+    return (
+      <BrowserRouter>
+      <div>
+          <Switch>
+           <Route path="/" component={Home} exact/>
+           <Route path="/about" component={About}/>
+           <Route path="/digital-design" component={About}/>
+           <Route path="/print-design" component={About}/>
+           <Route path="/coding" component={About}/>
+
+           <Route path="/post-protein-plus" component={PostProteinPlus}/>
+          <Route component={Error}/>
+         </Switch>
+      </div> 
+    </BrowserRouter>
+
+  )
+ }
 }
 
 export default App;

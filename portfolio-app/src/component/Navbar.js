@@ -1,5 +1,6 @@
 import '../styles/navbar.css';
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 class Navbar extends React.Component {
     render() {
@@ -14,17 +15,18 @@ class Navbar extends React.Component {
     return (
         <div className="navbar">
             <div className="topnav" id="myTopnav">
-                <a href="#home" className="navbar_logo">Jane N Design</a>
+                <NavLink to="/" className="navbar_logo">Jane N Design</NavLink>
                 <div className="navbar_menu">
-                <a href="#news">About</a>
-                <div class="navbar_dropdown">
-                    <button className="dropbtn">Work<i className="fa fa-caret-down"></i></button>
-                    <div className="dropdown-content">
-                    <a href="#">Digital Design</a>
-                    <a href="#">Print Design</a>
-                    <a href="#">Coding</a>
+                <NavLink to="/about">About</NavLink>
+                    <div class="dropdown">
+                        <button className="dropbtn">Work<i className="fa fa-caret-down"></i></button>
+                        <div className="dropdown-content">
+                        <NavLink to="/digital-design">Digital Design</NavLink>
+                        <NavLink to="/print-design">Print Design</NavLink>
+                        <NavLink to="/coding">Coding</NavLink>
+     
+                        </div>
                     </div>
-                </div>
                 </div>
                 <a href="javascript:void(0);" className="icon" onClick={myFunction}>&#9776;</a>
             </div>
