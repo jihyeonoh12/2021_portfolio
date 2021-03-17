@@ -10,7 +10,7 @@ import PostProteinPlus from './pages/PostProteinPlus'
 class App extends React.Component {
   render() {
     return (
-      <BrowserRouter>
+      <BrowserRouter basename={window.location.pathname || ''}>
       <div>
           <Switch>
            <Route path="/" component={Home} exact/>
